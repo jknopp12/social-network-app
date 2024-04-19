@@ -1,0 +1,55 @@
+.navigation {
+    background-color: lightblue;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100px;
+    margin-right: 20px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.navigation li {
+    width: 100%;
+    padding: 20px;
+    margin-bottom: 10px;
+    font-size: 1em;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.navigation li:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    width: 100%;
+}
+
+.navigation li.wd-active {
+    background-color: white;
+    padding: 25px; 
+}
+
+.navigation li.wd-active a {
+    color: navy;
+}
+
+.navigation a {
+    color: white;
+    text-decoration: none;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.navigation a i {
+    color: navy;
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.noodle {
+    font-size: 4em;
+    color: whitesmoke
+}
