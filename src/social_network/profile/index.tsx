@@ -8,11 +8,18 @@ function Profile() {
     const [profile, setProfile] = useState({
         username: "", password: "",
         firstName: "", lastName: "", email: "", role: "USER"
-      });
+    });
     const navigate = useNavigate();
     const handleLogout = async () => {
         await client.signout();
         navigate("/Login");
+    };
+    useEffect(() => {
+        fetchProfile();
+    }, [])
+    const fetchProfile = async () => {
+        const account = await client.profile();
+        setProfile(account);
     };
 
     return (
