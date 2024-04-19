@@ -29,9 +29,18 @@ export default function Followers() {
             console.log(err);
         }
     };
-    const username = "JohnDoe";
 
-    useEffect(() => { fetchUsers(); }, []);
+    useEffect(() => {
+        fetchUser();
+    }, [])
+    const fetchUser = async () => {
+        const account = await client.profile();
+        setUser(account);
+    };
+
+    useEffect(() => {
+        fetchUsers();
+    }, [])
 
     return (
         <div className="d-flex">
@@ -39,7 +48,7 @@ export default function Followers() {
             <div style={{ flexGrow: 1, padding: "20px" }}>
                 <h1>Followers</h1>
                 <hr/>
-                <h4>Hey, {username}!</h4>
+                <h4>Hey, {user.username}!</h4>
                 <p className="mb-4">Here you can view and manage who is following you:</p>
                 <table className="table">
                     <thead>

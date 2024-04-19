@@ -29,7 +29,13 @@ export default function Following() {
             console.log(err);
         }
     };
-    const username = "JohnDoe";
+    useEffect(() => {
+        fetchUser();
+    }, [])
+    const fetchUser = async () => {
+        const account = await client.profile();
+        setUser(account);
+    };
 
     useEffect(() => { fetchUsers(); }, []);
 
@@ -39,7 +45,7 @@ export default function Following() {
             <div style={{ flexGrow: 1, padding: "20px" }}>
                 <h1>Following</h1>
                 <hr/>
-                <h4>Hey, {username}!</h4>
+                <h4>Hey, {user.username}!</h4>
                 <p className="mb-4">Here you can view and manage who you are following:</p>
                 <table className="table">
                     <thead>

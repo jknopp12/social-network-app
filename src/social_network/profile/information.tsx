@@ -6,7 +6,7 @@ import Navigation from "../navigation";
 export default function Information() {
   const [profile, setProfile] = useState({
     username: "", password: "",
-    firstName: "", lastName: "", dob: "", email: "", role: "USER"
+    firstName: "", lastName: "", email: "", role: ""
   });
   const navigate = useNavigate();
   const fetchProfile = async () => {
@@ -35,22 +35,22 @@ export default function Information() {
         <p className="mb-4">Here you can view and manage your profile information:</p>
         {profile && (
           <div>
-            <input className="input" title="Username" value={profile.username} onChange={(e) =>
+            <input placeholder="Username" className="input" title="Username" value={profile.username} onChange={(e) =>
               setProfile({ ...profile, username: e.target.value })} />
             <br />
-            <input className="input" title="Password" value={profile.password} onChange={(e) =>
+            <input placeholder="Password" className="input" title="Password" value={profile.password} onChange={(e) =>
               setProfile({ ...profile, password: e.target.value })} />
             <br />
-            <input className="input" title="First Name" value={profile.firstName} onChange={(e) =>
+            <input placeholder="First Name" className="input" title="First Name" value={profile.firstName} onChange={(e) =>
               setProfile({ ...profile, firstName: e.target.value })} />
             <br />
-            <input className="input" title="Last Name" value={profile.lastName} onChange={(e) =>
+            <input placeholder="Last Name" className="input" title="Last Name" value={profile.lastName} onChange={(e) =>
               setProfile({ ...profile, lastName: e.target.value })} />
             <br />
-            <input className="input" title="Email" value={profile.email} onChange={(e) =>
+            <input placeholder="Email" className="input" title="Email" value={profile.email} onChange={(e) =>
               setProfile({ ...profile, email: e.target.value })} />
             <br />
-            <select title="Role" className="input" onChange={(e) =>
+            <select title="Role" className="input" value={profile.role} onChange={(e) =>
               setProfile({ ...profile, role: e.target.value })}>
               <option value="USER">User</option>
               <option value="ADMIN">Admin</option>
