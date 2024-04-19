@@ -7,7 +7,7 @@ import * as client from "./client";
 function Profile() {
     const [profile, setProfile] = useState({
         username: "", password: "",
-        firstName: "", lastName: "", email: "", role: "USER"
+        firstName: "", lastName: "", email: "", role: ""
     });
     const navigate = useNavigate();
     const handleLogout = async () => {

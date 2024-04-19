@@ -4,14 +4,14 @@ import * as client from "./client";
 export default function Signup() {
     const [profile, setProfile] = useState({
         username: "", password: "",
-        firstName: "", lastName: "", dob: "", email: "", role: "USER"
+        firstName: "", lastName: "", dob: "", email: "", role: ""
       });
     const [error, setError] = useState("");
     const [user, setUser] = useState({ username: "", password: "" });
     const navigate = useNavigate();
     const signup = async () => {
         try {
-            await client.signup(user);
+            await client.signup({ ...user, role: profile.role });
             navigate("/Profile");
         } catch (err: any) {
             setError(err.response.data.message);

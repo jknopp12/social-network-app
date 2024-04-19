@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { BsTrash3Fill, BsPlusCircleFill } from "react-icons/bs";
+import { RiUserUnfollowLine } from "react-icons/ri";
 import * as client from "./client";
 import { User } from "./client";
 import Navigation from "../navigation";
@@ -7,7 +7,7 @@ export default function Followers() {
     const [users, setUsers] = useState<User[]>([]);
     const [user, setUser] = useState<User>({
         _id: "", username: "", password: "", firstName: "",
-        lastName: "", role: "USER"
+        lastName: "", role: ""
     });
     const createUser = async () => {
         try {
@@ -17,6 +17,9 @@ export default function Followers() {
             console.log(err);
         }
     };
+    useEffect(() => {
+        fetchUsers();
+    }, [])
     const fetchUsers = async () => {
         const users = await client.findAllUsers();
         setUsers(users);
@@ -38,10 +41,6 @@ export default function Followers() {
         setUser(account);
     };
 
-    useEffect(() => {
-        fetchUsers();
-    }, [])
-
     return (
         <div className="d-flex">
             <Navigation />
@@ -53,41 +52,12 @@ export default function Followers() {
                 <table className="table">
                     <thead>
                         <tr>
-                            <th>Username & Password</th>
+                            <th>Username</th>
                             <th>First Name</th>
                             <th>Last Name</th>
                             <th>Role</th>
+                            <th>Unfollow</th>
                         </tr>
-                        <tr>
-                            <td>
-                                <input className="table-input" value={user.username} onChange={(e) =>
-                                    setUser({ ...user, username: e.target.value })} />
-                                <input className="table-input" value={user.password} onChange={(e) =>
-                                    setUser({ ...user, password: e.target.value })} />
-                            </td>
-                            <td>
-                                <input className="table-input" value={user.firstName} onChange={(e) =>
-                                    setUser({ ...user, firstName: e.target.value })} />
-                            </td>
-                            <td>
-                                <input className="table-input" value={user.lastName} onChange={(e) =>
-                                    setUser({ ...user, lastName: e.target.value })} />
-                            </td>
-                            <td>
-                                <select className="table-input" value={user.role} onChange={(e) =>
-                                    setUser({ ...user, role: e.target.value })}>
-                                    <option value="USER">User</option>
-                                    <option value="ADMIN">Admin</option>
-                                    <option value="FACULTY">Faculty</option>
-                                    <option value="STUDENT">Student</option>
-                                </select>
-                            </td>
-                            <td>
-                                <BsPlusCircleFill size={25} color="green" onClick={createUser} />
-                            </td>
-                            <th>&nbsp;</th>
-                        </tr>
-
                     </thead>
                     <tbody>
                         {users.map((user: any) => (
@@ -98,7 +68,7 @@ export default function Followers() {
                                 <td>{user.role}</td>
                                 <td>
                                     <button className="btn" onClick={() => deleteUser(user)}>
-                                        <BsTrash3Fill color="red" />
+                                        <RiUserUnfollowLine color="red" />
                                     </button>
                                 </td>
                             </tr>))}
