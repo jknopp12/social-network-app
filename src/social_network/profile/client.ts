@@ -6,6 +6,7 @@ const api = axios.create({
 export const BASE_API = process.env.REACT_APP_BASE_API_URL;
 // export const USERS_API = process.env.REACT_APP_API_URL;
 export const USERS_API = `${BASE_API}/api/users`;
+export const RECIPES_API = `${BASE_API}/api/recipes`;
 export interface User {
   _id: string; username: string; password: string; role: string;
   firstName: string, lastName: string
@@ -15,7 +16,7 @@ export interface Recipe {
   name: string;
   description: string;
   user: string;
-  ingredients: string[];
+  ingredients: string;
   instructions: string;
 };
 
@@ -53,12 +54,14 @@ export const signout = async () => {
   return response.data;
 };
 export const findUserById = async (id: string) => {
-  const response = await axios.get(`${USERS_API}/${id}`);
+  const response = await api.get(`${USERS_API}/${id}`);
   return response.data;
 };
 export const findRecipeByUser = async(user: User) => {
-  const response = await axios.get(`${USERS_API}/${user._id}/recipes`)
+  const response = await api.get(`${USERS_API}/${user._id}/recipes`)
   return response.data;
 }
-
-
+export const createRecipe = async(recipe: any) => {
+  const response = await api.post(`${RECIPES_API}`, recipe)
+  return response.data;
+}

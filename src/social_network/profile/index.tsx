@@ -64,8 +64,11 @@ function Profile() {
                     </div>
                 </div>
                 <hr />
+                <Link to="/Profile/Post" className="btn btn-primary btn-logout">
+                    Create a New Post
+                </Link>
                 <h2 className="mb-3"> Your Recipe Posts </h2>
-                <p className="mb-4">View all of your posted recipes here! <br/>
+                <p className="mb-4">View all of your posted recipes here! <br />
                     Click on a recipe card to view more details:</p>
                 <div className="row">
                     {recipes.map((recipe) => (

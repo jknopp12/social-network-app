@@ -13,11 +13,11 @@ const api = axios.create({
 export default function ProfileId() {
     const { profileId } = useParams<{ profileId: string }>();
     const [user, setUser] = useState<client.User>({
-        _id: '', 
-        username: '', 
-        password: '', 
+        _id: '',
+        username: '',
+        password: '',
         firstName: '',
-        lastName: '', 
+        lastName: '',
         role: ''
     });
     const [recipes, setRecipes] = useState<client.Recipe[]>([]);
@@ -45,9 +45,11 @@ export default function ProfileId() {
                 <hr />
                 <h2 className="mt-4"> {user?.username} </h2>
                 <p className="mb-4">Here you can view {user?.firstName} {user?.lastName}'s profile.</p>
-                <hr/>
+                <hr />
                 <h2 className="mt-4"> Posted Recipes </h2>
-                <p className="mb-4">View the recipes that {user?.username} has posted:</p>
+                <p className="mb-4">View the recipes that {user?.username} has posted:
+                    <br />
+                    Click on a recipe card to view more details:</p>
                 <div className="row">
                     {recipes.map((recipe) => (
                         <div key={recipe._id} className="col-md-4 mb-4">
