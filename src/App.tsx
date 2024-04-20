@@ -7,6 +7,7 @@ import Information from './social_network/profile/information';
 import Followers from './social_network/profile/followers';
 import Following from './social_network/profile/following';
 import Recipe from './social_network/recipe';
+import ProfileId from './social_network/profile/profile_id';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route path="/Profile/Information" element={<Information />} />
           <Route path="/Profile/Followers" element={<Followers />} />
           <Route path="/Profile/Following" element={<Following />} />
+          <Route path="/Profile/:profileId/*" element={<ProfileId />} />
           <Route path="/Search" element={<Search />} />
           <Route path="/Login" element={<Login />} />
           <Route path="/Recipe" element={<Recipe />} />

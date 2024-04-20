@@ -3,6 +3,7 @@ import { RiUserUnfollowLine } from "react-icons/ri";
 import * as client from "./client";
 import { User } from "./client";
 import Navigation from "../navigation";
+import { Link } from "react-router-dom";
 export default function Followers() {
     const [users, setUsers] = useState<User[]>([]);
     const [user, setUser] = useState<User>({
@@ -46,7 +47,7 @@ export default function Followers() {
             <Navigation />
             <div style={{ flexGrow: 1, padding: "20px" }}>
                 <h1>Followers</h1>
-                <hr/>
+                <hr />
                 <h4>Hey, {user.username}!</h4>
                 <p className="mb-4">Here you can view and manage who is following you:</p>
                 <table className="table">
@@ -62,7 +63,11 @@ export default function Followers() {
                     <tbody>
                         {users.map((user: any) => (
                             <tr key={user._id}>
-                                <td>{user.username}</td>
+                                <td>
+                                    <Link to={`/profile/${user._id}`} style={{ textDecoration: 'none' }}>
+                                    {user.username}
+                                    </Link>
+                                </td>
                                 <td>{user.firstName}</td>
                                 <td>{user.lastName}</td>
                                 <td>{user.role}</td>

@@ -43,4 +43,9 @@ export const signout = async () => {
   const response = await api.post(`${USERS_API}/signout`);
   return response.data;
 };
+export const findUserById = async (id: string) => {
+  const response = await axios.get(`${USERS_API}/${id}`);
+  return response.data;
+};
+
 
