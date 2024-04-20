@@ -10,6 +10,7 @@ import ProfileId from './social_network/profile/profile_id';
 import RecipePage from './social_network/recipe';
 import NewPost from './social_network/profile/post';
 import Anon from './social_network/profile/anon';
+import HomeAnon from './social_network/home/anon';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Navigate to="Home" />} />
           <Route path="/Home" element={<Home />} />
+          <Route path="/Home/Login" element={<HomeAnon />} />
           <Route path="/Profile" element={<Profile />} />
           <Route path="/Profile/Information" element={<Information />} />
           <Route path="/Profile/Followers" element={<Followers />} />
