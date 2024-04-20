@@ -1,7 +1,6 @@
 import Navigation from "../navigation";
 import Signin from "./signin";
 import Signup from "./signup";
-import Profile from "../profile";
 
 function Login() {
     return (

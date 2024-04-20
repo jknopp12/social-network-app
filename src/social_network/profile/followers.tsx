@@ -79,7 +79,7 @@ export default function Followers() {
                         {users.map((user: any) => (
                             <tr key={user._id}>
                                 <td>
-                                    <Link to={`/profile/${user._id}`} style={{ textDecoration: 'none' }}>
+                                    <Link to={`/Profile/${user._id}`} style={{ textDecoration: 'none' }}>
                                         {user.username}
                                     </Link>
                                 </td>
