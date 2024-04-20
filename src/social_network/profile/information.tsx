@@ -5,7 +5,7 @@ import { Link, useNavigate } from "react-router-dom";
 import Navigation from "../navigation";
 export default function Information() {
   const [profile, setProfile] = useState({
-    username: "", password: "",
+    _id: "", username: "", password: "",
     firstName: "", lastName: "", email: "", role: ""
   });
   const navigate = useNavigate();

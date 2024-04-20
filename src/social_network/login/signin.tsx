@@ -7,7 +7,7 @@ import "./index.css"
 export default function Signin() {
   const [credentials, setCredentials] = useState<User>({
     _id: "",
-    username: "", password: "", firstName: "", lastName: "", role: "USER"
+    username: "", password: "", firstName: "", lastName: "", email: "", role: "USER"
   });
   const navigate = useNavigate();
   const signin = async () => {
@@ -19,7 +19,7 @@ export default function Signin() {
       <input className="input" value={credentials.username} onChange={(e) =>
         setCredentials({ ...credentials, username: e.target.value })} />
       <br />
-      <input type="password" className="input" value={credentials.password} onChange={(e) =>
+      <input className="input" value={credentials.password} onChange={(e) =>
         setCredentials({ ...credentials, password: e.target.value })} />
       <br />
       <button className="btn button btn-primary" onClick={signin}> Sign In </button>
