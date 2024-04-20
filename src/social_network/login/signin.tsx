@@ -24,7 +24,7 @@ export default function Signin() {
       <input className="input" value={credentials.username} onChange={(e) =>
         setCredentials({ ...credentials, username: e.target.value })} />
       <br />
-      <input className="input" value={credentials.password} onChange={(e) =>
+      <input className="input" type="password" value={credentials.password} onChange={(e) =>
         setCredentials({ ...credentials, password: e.target.value })} />
       <br />
       <button className="btn button btn-primary" onClick={signin}> Sign In </button>
