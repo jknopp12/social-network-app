@@ -43,9 +43,11 @@ export default function ProfileId() {
             <div style={{ flexGrow: 1, padding: '20px' }}>
                 <h1>Profile </h1>
                 <hr />
-                <h3 className="mt-4"> Welcome to {user?.username}'s Profile! </h3>
-                <p className="mb-4">Here you can view the recipes that {user?.username} has posted.</p>
-                <h4 className="mt-4"> {user?.firstName}'s Recipes: </h4>
+                <h2 className="mt-4"> {user?.username} </h2>
+                <p className="mb-4">Here you can view {user?.firstName} {user?.lastName}'s profile.</p>
+                <hr/>
+                <h2 className="mt-4"> Posted Recipes </h2>
+                <p className="mb-4">View the recipes that {user?.username} has posted:</p>
                 <div className="row">
                     {recipes.map((recipe) => (
                         <div key={recipe._id} className="col-md-4 mb-4">

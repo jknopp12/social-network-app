@@ -43,7 +43,7 @@ function Profile() {
                 </button>
                 <h1 className="mb-4">Profile</h1>
                 <hr />
-                <h3>Welcome, {profile.username}!</h3>
+                <h2>Welcome, {profile.username}!</h2>
                 <p className="mb-4">View and manage your profile information, photos, and posts.</p>
 
                 <div className="row mb-4">
@@ -64,9 +64,9 @@ function Profile() {
                     </div>
                 </div>
                 <hr />
-                <h3 className="mb-3"> Your Recipe Posts:  </h3>
+                <h2 className="mb-3"> Your Recipe Posts </h2>
                 <p className="mb-4">View all of your posted recipes here! <br/>
-                    Click on a recipe card to view more details.</p>
+                    Click on a recipe card to view more details:</p>
                 <div className="row">
                     {recipes.map((recipe) => (
                         <div key={recipe._id} className="col-md-4 mb-4">

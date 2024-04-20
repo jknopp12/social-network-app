@@ -41,9 +41,9 @@ function Home() {
             <div className="content-container">
                 <h1 className="mb-4">Home</h1>
                 <hr />
-                <h3>Trending Recipe Posts</h3>
+                <h2>Recent Posts!</h2>
                 <div className="row mt-4">
-                    {recipes.map((recipe) => (
+                {recipes.slice(-4).map((recipe) => (
                         <div key={recipe._id} className="col-md-6 mb-4">
                             <div className="card">
                                 <Link to={`/recipe/${recipe._id}`} style={{ textDecoration: 'none' }}>
