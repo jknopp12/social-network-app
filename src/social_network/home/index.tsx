@@ -4,7 +4,7 @@ import Navigation from '../navigation';
 import * as client from './client';
 import { Recipe } from './client';
 import './index.css';
-import { CiFries } from "react-icons/ci";
+import { CiBowlNoodles } from "react-icons/ci";
 
 
 function Home() {
@@ -46,14 +46,11 @@ function Home() {
                     {recipes.map((recipe) => (
                         <div key={recipe._id} className="col-md-6 mb-4">
                             <div className="card">
-                                {/* <p className="card-text">Ingredients: {recipe.ingredients.join(', ')}</p>
-                                    <p className="card-text">Instructions: {recipe.instructions}</p> */}
                                 <Link to={`/recipe/${recipe._id}`} style={{ textDecoration: 'none' }}>
-                                    {/* {recipe.name} */}
                                     <div className="card-body">
                                         <h5 className="card-title">{recipe.name}</h5>
                                         <p className="card-text">{recipe.description}</p>
-                                        <CiFries className="card-icon" />
+                                        <CiBowlNoodles className="card-icon text-right position-absolute bottom-0 end-0" />
                                     </div>
                                 </Link>
                             </div>

@@ -2,7 +2,7 @@
     display: flex;
 }
 
-.card {
+/* .card {
     width: 100%;
     max-width: 400px;
     border: 1px solid #e0e0e0;
@@ -26,7 +26,6 @@
 }
 
 .card-title {
-    color: navy;
     margin-bottom: 10px;
     font-size: 1.5em;
 }
@@ -34,7 +33,7 @@
 .card-text {
     margin: 0;
     font-size: 1em;
-}
+} */
 
 .input {
     width: 100%;
@@ -73,24 +72,4 @@
 .button:focus {
     outline: none;
     box-shadow: 0 0 3px navy;
-}
-
-/* Responsive styling for post cards */
-@media (max-width: 768px) {
-    .card {
-        width: 100%;
-        margin-bottom: 20px;
-    }
-
-    .card-img-top {
-        height: 150px;
-    }
-
-    .card-title {
-        font-size: 1.2em;
-    }
-
-    .card-text {
-        font-size: 0.9em;
-    }
 }

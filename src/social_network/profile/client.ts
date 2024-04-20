@@ -10,6 +10,15 @@ export interface User {
   _id: string; username: string; password: string; role: string;
   firstName: string, lastName: string
 };
+export interface Recipe {
+  _id: string;
+  name: string;
+  description: string;
+  user: string;
+  ingredients: string[];
+  instructions: string;
+};
+
 export const signin = async (credentials: User) => {
   const response = await api.post(`${USERS_API}/signin`, credentials);
   return response.data;
@@ -47,5 +56,9 @@ export const findUserById = async (id: string) => {
   const response = await axios.get(`${USERS_API}/${id}`);
   return response.data;
 };
+export const findRecipeByUser = async(user: User) => {
+  const response = await axios.get(`${USERS_API}/${user._id}/recipes`)
+  return response.data;
+}
 
 
