@@ -45,6 +45,18 @@
     border-color: #001f3f;
 }
 
+.content-container {
+    flex-grow: 1;
+    padding: 20px;
+}
+
+.card-icon {
+    font-size: 8em;
+    color: lightblue;
+}
+
+
+
 @media (max-width: 1000px) {
     .card-img-top {
         height: 500px;

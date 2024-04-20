@@ -4,21 +4,20 @@ const api = axios.create({
 }
 );
 
-const API_BASE = process.env.REACT_APP_BASE_API_URL;
-const RECIPES_API = `${API_BASE}/api/recipes`;
+export const API_BASE = process.env.REACT_APP_BASE_API_URL;
+export const RECIPES_API = `${API_BASE}/api/recipes`;
 export interface Recipe {
     _id: string; name: string; description: string; user: string;
-    instruction: string, ingredients: string
+    instructions: string, ingredients: string
   };
 
-export const getRecipes = async () => {
-    const response = await api.get("/recipes");
+export const findAllRecipes = async () => {
+    const response = await api.get(`${RECIPES_API}`);
     return response.data;
 };
 
 export const getRecipeById = async (recipeId: string) => {
-    const response = await api.get(`/recipes/${recipeId}`);
+    const response = await api.get(`${RECIPES_API}/${recipeId}`);
     return response.data;
 };
-
 

@@ -2,9 +2,23 @@
 import Navigation from "../navigation";
 import { useParams } from "react-router-dom";
 import "./index.css"
+import * as client from "./client";
+import { Recipe } from "./client";
+import { useEffect, useState } from "react";
 
-function Recipe() {
-    const { postId } = useParams(); // Get the postId from the URL params
+
+export default function RecipePage() {
+    const [recipes, setRecipes] = useState<Recipe[]>([]);
+    const [recipe, setRecipe] = useState<Recipe>({
+        _id: "", name: "", description: "", user: "", ingredients: "",
+        instructions: ""
+    });
+
+    const fetchRecipes = async () => {
+        const recipes = await client.findAllRecipes();
+        setRecipes(recipes);
+    };
+    useEffect(() => { fetchRecipes(); }, []);
 
     // Sample post data
     const post = {
@@ -25,7 +39,7 @@ function Recipe() {
                 <img src={post.image} className="img-fluid rounded mb-4" alt={post.title} />
                 <p>{post.content}</p>
                 
-                <h3 className="mt-4">Ingredients</h3>
+                <h3 className="mt-4">{recipe.name}</h3>
                 <ul>
                     {post.ingredients.map((ingredient, index) => (
                         <li key={index}>{ingredient}</li>
@@ -38,5 +52,3 @@ function Recipe() {
         </div>
     );
 }
-
-export default Recipe;
