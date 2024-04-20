@@ -57,7 +57,7 @@ export default function Followers() {
                             <th>First Name</th>
                             <th>Last Name</th>
                             <th>Role</th>
-                            <th>Unfollow</th>
+                            <th>Remove</th>
                         </tr>
                     </thead>
                     <tbody>

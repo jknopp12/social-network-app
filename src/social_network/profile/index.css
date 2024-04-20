@@ -49,6 +49,7 @@
     float: right;
 }
 
+
 /* Responsive styling for post cards */
 @media (max-width: 768px) {
     .card {

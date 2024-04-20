@@ -3,6 +3,7 @@ import * as client from "./client";
 import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Navigation from "../navigation";
+
 export default function Information() {
   const [profile, setProfile] = useState({
     _id: "", username: "", password: "",
@@ -20,6 +21,9 @@ export default function Information() {
     await client.signout();
     navigate("/Login");
   };
+  const back = async () => {
+    navigate("/Profile");
+  };
   useEffect(() => {
     fetchProfile();
   }, [])
@@ -28,9 +32,11 @@ export default function Information() {
     <div className="d-flex">
       <Navigation />
       <div style={{ flexGrow: 1, padding: "20px" }}>
-
+      <button className="btn button btn-primary btn-logout" onClick={signout}>
+          Sign Out
+        </button>
         <h1 className="mb-4" > Profile Information</h1>
-        <hr/>
+        <hr />
         <h4>Hey, {profile.username}!</h4>
         <p className="mb-4">Here you can view and manage your profile information:</p>
         {profile && (
@@ -60,9 +66,9 @@ export default function Information() {
             <button className="btn button btn-primary" onClick={save}>
               Save Edits
             </button>
-
-            <button className="btn button btn-primary" onClick={signout}>
-              Sign Out
+            <br />
+            <button className="btn button btn-back" onClick={back} >
+              Back to Profile
             </button>
           </div>
         )}
