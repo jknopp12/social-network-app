@@ -10,14 +10,6 @@ export default function Followers() {
         _id: "", username: "", password: "", firstName: "",
         lastName: "", role: ""
     });
-    const createUser = async () => {
-        try {
-            const newUser = await client.createUser(user);
-            setUsers([newUser, ...users]);
-        } catch (err) {
-            console.log(err);
-        }
-    };
     useEffect(() => {
         fetchUsers();
     }, [])
@@ -50,6 +42,9 @@ export default function Followers() {
     const back = async () => {
         navigate("/Profile");
     };
+    const handleUserClick = (userId: string) => {
+        navigate(`/Profile/${userId}`);
+    };
 
     return (
         <div className="d-flex">
@@ -64,28 +59,23 @@ export default function Followers() {
                 <h1>Followers</h1>
                 <hr />
                 <h4>Hey, {user.username}!</h4>
-                <p className="mb-4">Here you can view and manage who is following you:</p>
+                <p className="mb-4">Here you can view and manage who is following you.
+                <br/> Click a user to view their profile and recipe posts.</p>
                 <table className="table">
                     <thead>
                         <tr>
                             <th>Username</th>
                             <th>First Name</th>
                             <th>Last Name</th>
-                            <th>Role</th>
                             <th>Remove</th>
                         </tr>
                     </thead>
                     <tbody>
                         {users.map((user: any) => (
-                            <tr key={user._id}>
-                                <td>
-                                    <Link to={`/Profile/${user._id}`} style={{ textDecoration: 'none' }}>
-                                        {user.username}
-                                    </Link>
-                                </td>
+                            <tr key={user._id} onClick={() => handleUserClick(user._id)} style={{ cursor: 'pointer' }}>
+                                <td>{user.username}</td>
                                 <td>{user.firstName}</td>
                                 <td>{user.lastName}</td>
-                                <td>{user.role}</td>
                                 <td>
                                     <button className="btn" onClick={() => deleteUser(user)}>
                                         <RiUserUnfollowLine color="red" />

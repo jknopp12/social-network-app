@@ -48,6 +48,9 @@ export default function Following() {
     const back = async () => {
         navigate("/Profile");
     };
+    const handleUserClick = (userId: string) => {
+        navigate(`/Profile/${userId}`);
+    };
 
 
     return (
@@ -70,21 +73,15 @@ export default function Following() {
                             <th>Username</th>
                             <th>First Name</th>
                             <th>Last Name</th>
-                            <th>Role</th>
                             <th>Unfollow</th>
                         </tr>
                     </thead>
                     <tbody>
                         {users.map((user: any) => (
-                            <tr key={user._id}>
-                                <td>
-                                    <Link to={`/Profile/${user._id}`} style={{ textDecoration: 'none' }}>
-                                        {user.username}
-                                    </Link>
-                                </td>
+                            <tr key={user._id} onClick={() => handleUserClick(user._id)} style={{ cursor: 'pointer' }}>
+                                <td>{user.username}</td>
                                 <td>{user.firstName}</td>
                                 <td>{user.lastName}</td>
-                                <td>{user.role}</td>
                                 <td>
                                     <button className="btn" onClick={() => deleteUser(user)}>
                                         <RiUserUnfollowLine color="red" />

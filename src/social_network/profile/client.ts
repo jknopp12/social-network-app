@@ -25,9 +25,18 @@ export const signin = async (credentials: User) => {
   return response.data;
 };
 export const profile = async () => {
-  const response = await api.post(`${USERS_API}/profile`);
-  return response.data;
+  try {
+    const response = await api.post(`${USERS_API}/profile`);
+    return response.data;
+  } catch (error: any) {
+    if (error.response && error.response.status === 401) {
+      throw new Error('Unauthorized');
+    } else {
+      throw error;
+    }
+  }
 };
+
 export const updateUser = async (user: any) => {
   const response = await api.put(`${USERS_API}/${user._id}`, user);
   return response.data;
@@ -57,11 +66,11 @@ export const findUserById = async (id: string) => {
   const response = await api.get(`${USERS_API}/${id}`);
   return response.data;
 };
-export const findRecipeByUser = async(user: User) => {
+export const findRecipeByUser = async (user: User) => {
   const response = await api.get(`${USERS_API}/${user._id}/recipes`)
   return response.data;
 }
-export const createRecipe = async(recipe: any) => {
+export const createRecipe = async (recipe: any) => {
   const response = await api.post(`${RECIPES_API}`, recipe)
   return response.data;
 }

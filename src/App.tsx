@@ -23,7 +23,7 @@ function App() {
           <Route path="/Profile/Followers" element={<Followers />} />
           <Route path="/Profile/Following" element={<Following />} />
           <Route path="/Profile/Post" element={<NewPost />} />
-          <Route path="/Profile/Signin" element={<Anon />} />
+          <Route path="/Profile/Login" element={<Anon />} />
           <Route path="/Profile/:profileId/*" element={<ProfileId />} />
           <Route path="/Search" element={<Search />} />
           <Route path="/Login" element={<Login />} />

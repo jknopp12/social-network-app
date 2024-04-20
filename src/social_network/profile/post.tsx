@@ -38,46 +38,52 @@ export default function NewPost() {
     useEffect(() => {
         fetchRecipe();
     }, []);
+    const back = async () => {
+        navigate("/Profile");
+    };
 
     return (
         <div className="d-flex">
             <Navigation />
             <div className="content-container">
+                <button className="btn btn-primary btn-logout" onClick={back} >
+                    Back to Profile
+                </button>
                 <h1 className="mb-4">New Recipe</h1>
                 <hr />
                 {recipe && (
-                <div>
-                    <div className="mb-3">
-                        <label htmlFor="name" className="form-label">Name</label>
-                        <input className="input form-control" value={recipe.name} onChange={(e) =>
-                            setRecipe({ ...recipe, name: e.target.value })} />
+                    <div>
+                        <div className="mb-3">
+                            <label htmlFor="name" className="form-label">Name</label>
+                            <input className="input form-control" value={recipe.name} onChange={(e) =>
+                                setRecipe({ ...recipe, name: e.target.value })} />
+                        </div>
+                        <div className="mb-3">
+                            <label htmlFor="description" className="form-label">Description</label>
+                            <textarea
+                                className="input form-control"
+                                value={recipe.description}
+                                onChange={(e) => setRecipe({ ...recipe, description: e.target.value })}
+                            ></textarea>
+                        </div>
+                        <div className="mb-3">
+                            <label htmlFor="ingredients" className="form-label">Ingredients</label>
+                            <textarea
+                                className="input form-control"
+                                value={recipe.ingredients}
+                                onChange={(e) => setRecipe({ ...recipe, ingredients: e.target.value })}
+                            ></textarea>
+                        </div>
+                        <div className="mb-3">
+                            <label htmlFor="instructions" className="form-label">Instructions</label>
+                            <textarea
+                                className="input form-control"
+                                value={recipe.instructions}
+                                onChange={(e) => setRecipe({ ...recipe, instructions: e.target.value })}
+                            ></textarea>
+                        </div>
+                        <button type="button" className="btn btn-primary" onClick={createRecipe}>Create Recipe</button>
                     </div>
-                    <div className="mb-3">
-                        <label htmlFor="description" className="form-label">Description</label>
-                        <textarea
-                            className="input form-control"
-                            value={recipe.description}
-                            onChange={(e) => setRecipe({ ...recipe, description: e.target.value })}
-                        ></textarea>
-                    </div>
-                    <div className="mb-3">
-                        <label htmlFor="ingredients" className="form-label">Ingredients</label>
-                        <textarea
-                            className="input form-control"
-                            value={recipe.ingredients}
-                            onChange={(e) => setRecipe({ ...recipe, ingredients: e.target.value })}
-                        ></textarea>
-                    </div>
-                    <div className="mb-3">
-                        <label htmlFor="instructions" className="form-label">Instructions</label>
-                        <textarea
-                            className="input form-control"
-                            value={recipe.instructions}
-                            onChange={(e) => setRecipe({ ...recipe, instructions: e.target.value })}
-                        ></textarea>
-                    </div>
-                    <button type="button" className="btn btn-primary" onClick={createRecipe}>Create Recipe</button>
-                </div>
                 )}
             </div>
         </div>

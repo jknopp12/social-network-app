@@ -5,7 +5,6 @@ import * as client from './client';
 import './index.css';
 import { CiBowlNoodles } from "react-icons/ci";
 
-
 function Profile() {
     const [profile, setProfile] = useState({
         username: '',
@@ -30,9 +29,9 @@ function Profile() {
             const userRecipes = await client.findRecipeByUser(account);
             setRecipes(userRecipes);
         } catch (error: any) {
-            // If the error status is 401 (Unauthorized), redirect to the Login page
-            if (error.response && error.response.status === 401) {
-                navigate('/Profile/Signin');
+            // If the error message is 'Unauthorized', redirect to the Login page
+            if (error.message === 'Unauthorized') {
+                navigate('/Profile/Login');
             } else {
                 console.error('Error fetching profile:', error);
             }
