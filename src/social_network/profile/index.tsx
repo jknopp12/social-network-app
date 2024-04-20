@@ -24,10 +24,19 @@ function Profile() {
     };
 
     const fetchProfile = async () => {
-        const account = await client.profile();
-        setProfile(account);
-        const userRecipes = await client.findRecipeByUser(account);
-        setRecipes(userRecipes);
+        try {
+            const account = await client.profile();
+            setProfile(account);
+            const userRecipes = await client.findRecipeByUser(account);
+            setRecipes(userRecipes);
+        } catch (error: any) {
+            // If the error status is 401 (Unauthorized), redirect to the Login page
+            if (error.response && error.response.status === 401) {
+                navigate('/Profile/Signin');
+            } else {
+                console.error('Error fetching profile:', error);
+            }
+        }
     };
 
     useEffect(() => {

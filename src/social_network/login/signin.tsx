@@ -5,14 +5,19 @@ import * as client from "./client";
 import "./index.css"
 
 export default function Signin() {
+  const [error, setError] = useState("");
   const [credentials, setCredentials] = useState<User>({
     _id: "",
     username: "", password: "", firstName: "", lastName: "", email: "", role: "USER"
   });
   const navigate = useNavigate();
   const signin = async () => {
-    await client.signin(credentials);
-    navigate("/Profile");
+    try {
+      await client.signin(credentials);
+      navigate("/Profile");
+    } catch (err: any) {
+      setError(err.response.data.message);
+    }
   };
   return (
     <div>

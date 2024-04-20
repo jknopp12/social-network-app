@@ -8,7 +8,7 @@ export const API_BASE = process.env.REACT_APP_BASE_API_URL;
 export const RECIPES_API = `${API_BASE}/api/recipes`;
 export interface Recipe {
     _id: string; name: string; description: string; user: string;
-    instructions: string, ingredients: string
+    instructions: string[], ingredients: string[]
   };
 
 export const findAllRecipes = async () => {
