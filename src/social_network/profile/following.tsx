@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { RiUserUnfollowLine } from "react-icons/ri";
+import { useNavigate } from "react-router-dom";
 import Navigation from "../navigation";
 import * as client from "./client";
 import { User } from "./client";
@@ -39,10 +40,26 @@ export default function Following() {
 
     useEffect(() => { fetchUsers(); }, []);
 
+    const signout = async () => {
+        await client.signout();
+        navigate("/Login");
+    };
+    const navigate = useNavigate();
+    const back = async () => {
+        navigate("/Profile");
+    };
+
+
     return (
         <div className="d-flex">
             <Navigation />
             <div style={{ flexGrow: 1, padding: "20px" }}>
+                <button className="btn btn-primary btn-logout" onClick={signout}>
+                    Sign Out
+                </button>
+                <button className="btn btn-primary btn-logout" onClick={back} >
+                    Back to Profile
+                </button>
                 <h1>Following</h1>
                 <hr />
                 <h4>Hey, {user.username}!</h4>

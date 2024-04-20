@@ -26,11 +26,14 @@ function Profile() {
         <div className="d-flex">
             <Navigation />
             <div style={{ flexGrow: 1, padding: "20px" }}>
+                <button className="btn btn-primary btn-logout" onClick={handleLogout}>
+                    Sign Out
+                </button>
                 <h1 className="mb-4">Profile</h1>
                 <hr />
-                <button className="btn btn-danger btn-logout" onClick={handleLogout}>
+                {/* <button className="btn btn-danger btn-logout" onClick={handleLogout}>
                     Logout
-                </button>
+                </button> */}
                 <h4>Welcome, {profile.username}!</h4>
                 <p className="mb-4">View and manage your profile information, photos, and posts.</p>
 

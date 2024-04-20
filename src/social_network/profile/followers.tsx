@@ -3,7 +3,7 @@ import { RiUserUnfollowLine } from "react-icons/ri";
 import * as client from "./client";
 import { User } from "./client";
 import Navigation from "../navigation";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 export default function Followers() {
     const [users, setUsers] = useState<User[]>([]);
     const [user, setUser] = useState<User>({
@@ -42,10 +42,25 @@ export default function Followers() {
         setUser(account);
     };
 
+    const signout = async () => {
+        await client.signout();
+        navigate("/Login");
+    };
+    const navigate = useNavigate();
+    const back = async () => {
+        navigate("/Profile");
+    };
+
     return (
         <div className="d-flex">
             <Navigation />
             <div style={{ flexGrow: 1, padding: "20px" }}>
+                <button className="btn btn-primary btn-logout" onClick={signout}>
+                    Sign Out
+                </button>
+                <button className="btn btn-primary btn-logout" onClick={back} >
+                    Back to Profile
+                </button>
                 <h1>Followers</h1>
                 <hr />
                 <h4>Hey, {user.username}!</h4>
@@ -65,7 +80,7 @@ export default function Followers() {
                             <tr key={user._id}>
                                 <td>
                                     <Link to={`/profile/${user._id}`} style={{ textDecoration: 'none' }}>
-                                    {user.username}
+                                        {user.username}
                                     </Link>
                                 </td>
                                 <td>{user.firstName}</td>

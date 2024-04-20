@@ -32,8 +32,11 @@ export default function Information() {
     <div className="d-flex">
       <Navigation />
       <div style={{ flexGrow: 1, padding: "20px" }}>
-      <button className="btn button btn-primary btn-logout" onClick={signout}>
+        <button className="btn btn-primary btn-logout" onClick={signout}>
           Sign Out
+        </button>
+        <button className="btn btn-primary btn-logout" onClick={back} >
+          Back to Profile
         </button>
         <h1 className="mb-4" > Profile Information</h1>
         <hr />
@@ -63,12 +66,8 @@ export default function Information() {
               <option value="CHEF">Chef</option>
             </select>
             <br />
-            <button className="btn button btn-primary" onClick={save}>
+            <button className="btn btn-primary btn-info" onClick={save}>
               Save Edits
-            </button>
-            <br />
-            <button className="btn button btn-back" onClick={back} >
-              Back to Profile
             </button>
           </div>
         )}
