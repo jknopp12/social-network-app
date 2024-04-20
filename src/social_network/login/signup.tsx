@@ -4,7 +4,7 @@ import * as client from "./client";
 export default function Signup() {
     const [profile, setProfile] = useState({
         username: "", password: "",
-        firstName: "", lastName: "", dob: "", email: "", role: ""
+        firstName: "", lastName: "", dob: "", email: "", role: "USER"
       });
     const [error, setError] = useState("");
     const [user, setUser] = useState({ username: "", password: "" });
