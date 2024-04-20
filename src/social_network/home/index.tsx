@@ -41,7 +41,7 @@ function Home() {
             <div className="content-container">
                 <h1 className="mb-4">Home</h1>
                 <hr />
-                <h3>Trending Posts</h3>
+                <h3>Trending Recipe Posts</h3>
                 <div className="row mt-4">
                     {recipes.map((recipe) => (
                         <div key={recipe._id} className="col-md-6 mb-4">

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { RiUserUnfollowLine } from "react-icons/ri";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Navigation from "../navigation";
 import * as client from "./client";
 import { User } from "./client";
@@ -77,7 +77,11 @@ export default function Following() {
                     <tbody>
                         {users.map((user: any) => (
                             <tr key={user._id}>
-                                <td>{user.username}</td>
+                                <td>
+                                    <Link to={`/profile/${user._id}`} style={{ textDecoration: 'none' }}>
+                                        {user.username}
+                                    </Link>
+                                </td>
                                 <td>{user.firstName}</td>
                                 <td>{user.lastName}</td>
                                 <td>{user.role}</td>
