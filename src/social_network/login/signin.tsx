@@ -12,12 +12,12 @@ export default function Signin() {
   });
   const navigate = useNavigate();
   const signin = async () => {
-    try {
+    // try {
       await client.signin(credentials);
       navigate("/Profile");
-    } catch (err: any) {
-      setError(err.response.data.message);
-    }
+    // } catch (err: any) {
+    //   setError(err.response.data.message);
+    // }
   };
   return (
     <div>
