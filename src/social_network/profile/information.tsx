@@ -47,7 +47,7 @@ export default function Information() {
             <input placeholder="Username" className="input" title="Username" value={profile.username} onChange={(e) =>
               setProfile({ ...profile, username: e.target.value })} />
             <br />
-            <input placeholder="Password" className="input" title="Password" value={profile.password} onChange={(e) =>
+            <input type="password" placeholder="Password" className="input" title="Password" value={profile.password} onChange={(e) =>
               setProfile({ ...profile, password: e.target.value })} />
             <br />
             <input placeholder="First Name" className="input" title="First Name" value={profile.firstName} onChange={(e) =>
