@@ -38,6 +38,9 @@ export default function RecipePage() {
         <Link to="/Recipes" className="btn btn-primary btn-logout">
           Click here to view more recipes!
         </Link>
+        <Link to={`/Profile/${recipe.user}`} className="btn btn-primary btn-logout">
+          View User Profile
+        </Link>
         <h1 className="mb-4">{recipe.name}</h1>
         <hr />
         <h3>{recipe.description}</h3>

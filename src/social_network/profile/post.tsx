@@ -13,8 +13,8 @@ export default function NewPost() {
         name: '',
         description: '',
         user: '',
-        ingredients: '',
-        instructions: ''
+        ingredients: [],
+        instructions: []
     });
     const navigate = useNavigate();
 
@@ -73,7 +73,7 @@ export default function NewPost() {
                                 className="input form-control"
                                 placeholder="Ingredients"
                                 value={recipe.ingredients}
-                                onChange={(e) => setRecipe({ ...recipe, ingredients: e.target.value })}
+                                onChange={(e) => setRecipe({ ...recipe, ingredients: e.target.value.split(',') })}
                             ></textarea>
                         </div>
                         <div className="mb-3">
@@ -82,7 +82,7 @@ export default function NewPost() {
                                 className="input form-control"
                                 placeholder="Instructions"
                                 value={recipe.instructions}
-                                onChange={(e) => setRecipe({ ...recipe, instructions: e.target.value })}
+                                onChange={(e) => setRecipe({ ...recipe, instructions: e.target.value.split('.') })}
                             ></textarea>
                         </div>
                         <button type="button" className="btn btn-primary" onClick={createRecipe}>Create Recipe</button>

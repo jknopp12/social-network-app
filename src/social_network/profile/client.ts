@@ -16,8 +16,8 @@ export interface Recipe {
   name: string;
   description: string;
   user: string;
-  ingredients: string;
-  instructions: string;
+  ingredients: string[];
+  instructions: string[];
 };
 
 export const signin = async (credentials: User) => {
