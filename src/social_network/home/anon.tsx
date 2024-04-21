@@ -18,12 +18,6 @@ export default function HomeAnon() {
         instructions: ''
     });
 
-    const handleReadMore = async () => {
-        await client.getRecipeById(recipe._id);
-        navigate(`/Recipe/${recipe._id}`);
-    };
-
-
     const fetchRecipes = async () => {
         const recipes = await client.findAllRecipes();
         setRecipes(recipes);
@@ -39,14 +33,20 @@ export default function HomeAnon() {
         <div className="d-flex">
             <Navigation />
             <div className="content-container">
+                <Link to="/Login" className="btn btn-primary btn-logout">
+                    Sign Up / Log In
+                </Link>
                 <h1 className="mb-4">Home</h1>
                 <hr />
-                <h2>Recent Posts!</h2>
+                <h3>Recent Posts</h3>
+                <p> Check out some recent posts from our other users:
+                    <br /> If you want to share your own special recipes, sign up for an account or log in!
+                </p>
                 <div className="row mt-4">
-                {recipes.slice(-4).map((recipe) => (
+                    {recipes.slice(-4).map((recipe) => (
                         <div key={recipe._id} className="col-md-6 mb-4">
                             <div className="card">
-                                <Link to={`/recipe/${recipe._id}`} style={{ textDecoration: 'none' }}>
+                                <Link to={`/Recipe/${recipe._id}`} style={{ textDecoration: 'none' }}>
                                     <div className="card-body">
                                         <h5 className="card-title">{recipe.name}</h5>
                                         <p className="card-text">{recipe.description}</p>

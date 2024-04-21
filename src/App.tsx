@@ -11,6 +11,7 @@ import RecipePage from './social_network/recipe';
 import NewPost from './social_network/profile/post';
 import Anon from './social_network/profile/anon';
 import HomeAnon from './social_network/home/anon';
+import RecipeHome from './social_network/recipe/home';
 
 function App() {
   return (
@@ -19,17 +20,17 @@ function App() {
         <Routes>
           <Route path="/" element={<Navigate to="Home" />} />
           <Route path="/Home" element={<Home />} />
-          <Route path="/Home/Login" element={<HomeAnon />} />
+          <Route path="/Home/SignedOut" element={<HomeAnon />} />
           <Route path="/Profile" element={<Profile />} />
           <Route path="/Profile/Information" element={<Information />} />
           <Route path="/Profile/Followers" element={<Followers />} />
           <Route path="/Profile/Following" element={<Following />} />
           <Route path="/Profile/Post" element={<NewPost />} />
-          <Route path="/Profile/Login" element={<Anon />} />
+          <Route path="/Profile/SignedOut" element={<Anon />} />
           <Route path="/Profile/:profileId/*" element={<ProfileId />} />
           <Route path="/Search" element={<Search />} />
           <Route path="/Login" element={<Login />} />
-          <Route path="/Recipe" element={<RecipePage />} />
+          <Route path="/Recipe" element={<RecipeHome />} />
           <Route path="/Recipe/:recipeId/*" element={<RecipePage />} />
         </Routes>
       </div>

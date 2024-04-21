@@ -54,7 +54,7 @@ export default function ProfileId() {
                     {recipes.map((recipe) => (
                         <div key={recipe._id} className="col-md-4 mb-4">
                             <div className="card">
-                                <Link to={`/recipe/${recipe._id}`} style={{ textDecoration: 'none' }}>
+                                <Link to={`/Recipe/${recipe._id}`} style={{ textDecoration: 'none' }}>
                                     <div className="card-body">
                                         <h5 className="card-title">{recipe.name}</h5>
                                         <p className="card-text">{recipe.description}</p>

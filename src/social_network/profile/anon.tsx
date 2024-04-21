@@ -57,29 +57,6 @@ export default function Anon() {
                         ))}
                     </tbody>
                 </table>
-
-                <hr />
-                <Link to="/Profile/Post" className="btn btn-primary btn-logout">
-                    Create a New Post
-                </Link>
-                <h2 className="mb-3"> Popular Recipe Posts </h2>
-                <p className="mb-4">View all of your posted recipes here! <br />
-                    Click on a recipe card to view more details:</p>
-                {/* <div className="row">
-                    {recipes.map((recipe) => (
-                        <div key={recipe._id} className="col-md-4 mb-4">
-                            <div className="card">
-                                <Link to={`/recipe/${recipe._id}`} style={{ textDecoration: 'none' }}>
-                                    <div className="card-body">
-                                        <h5 className="card-title">{recipe.name}</h5>
-                                        <p className="card-text">{recipe.description}</p>
-                                        <CiBowlNoodles className="card-icon text-right position-absolute bottom-0 end-0" />
-                                    </div>
-                                </Link>
-                            </div>
-                        </div>
-                    ))}
-                </div> */}
             </div>
         </div>
     );

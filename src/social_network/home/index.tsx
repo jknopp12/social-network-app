@@ -30,11 +30,15 @@ function Home() {
             setRecipes(allRecipes);
         } catch (error: any) {
             if (error.message === 'Unauthorized') {
-                navigate('/Home/Login');
+                navigate('/Home/SignedOut');
             } else {
                 console.error('Error fetching profile:', error);
             }
         }
+    };
+    const handleLogout = async () => {
+        await client.signout();
+        navigate('/Login');
     };
 
     useEffect(() => {
@@ -42,22 +46,26 @@ function Home() {
     }, []);
 
     // Check if user is signed in
-    const isLoggedIn = profile.username !== ''; 
+    const isLoggedIn = profile.username !== '';
 
     return (
         <div className="d-flex">
             <Navigation />
             <div className="content-container">
+                <button className="btn btn-primary btn-logout" onClick={handleLogout}>
+                    Sign Out
+                </button>
                 <h1 className="mb-4">Home</h1>
                 <hr />
                 {isLoggedIn && (
                     <>
-                        <h2>Your Recipes</h2>
+                        <h3> Hey {profile.username}! </h3>
+                        <p> See your recent recipes here: </p>
                         <div className="row mt-4">
-                            {userRecipes.slice(0, 4).map((recipe) => (
+                            {userRecipes.slice(-2).map((recipe) => (
                                 <div key={recipe._id} className="col-md-6 mb-4">
                                     <div className="card">
-                                        <Link to={`/recipe/${recipe._id}`} style={{ textDecoration: 'none' }}>
+                                        <Link to={`/Recipe/${recipe._id}`} style={{ textDecoration: 'none' }}>
                                             <div className="card-body">
                                                 <h5 className="card-title">{recipe.name}</h5>
                                                 <p className="card-text">{recipe.description}</p>
@@ -70,13 +78,14 @@ function Home() {
                         </div>
                     </>
                 )}
-                
-                <h2>Recent Posts</h2>
+
+                <h3>Recent Posts</h3>
+                <p> Check out some recent posts from our other users: </p>
                 <div className="row mt-4">
                     {recipes.slice(-2).map((recipe) => (
                         <div key={recipe._id} className="col-md-6 mb-4">
                             <div className="card">
-                                <Link to={`/recipe/${recipe._id}`} style={{ textDecoration: 'none' }}>
+                                <Link to={`/Recipe/${recipe._id}`} style={{ textDecoration: 'none' }}>
                                     <div className="card-body">
                                         <h5 className="card-title">{recipe.name}</h5>
                                         <p className="card-text">{recipe.description}</p>

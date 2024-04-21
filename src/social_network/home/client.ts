@@ -41,4 +41,8 @@ export const profile = async () => {
     }
   }
 };
+export const signout = async () => {
+  const response = await api.post(`${USERS_API}/signout`);
+  return response.data;
+};
 
