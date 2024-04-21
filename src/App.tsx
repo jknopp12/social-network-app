@@ -14,6 +14,7 @@ import RecipeHome from './social_network/recipe/home';
 import SearchPage from './social_network/search/search';
 import ManageUsers from './social_network/profile/manageusers';
 import SpoonacularSearch from './social_network/spoonacularapi';
+import SpoonacularDetails from './social_network/spoonacularapi/details';
 
 function App() {
   return (
@@ -35,7 +36,7 @@ function App() {
           <Route path="/LogIn" element={<Login />} />
           <Route path="/Recipes" element={<RecipeHome />} />
           <Route path="/Recipes/:recipeId/*" element={<RecipePage />} />
-          <Route path="/Recipes/Details/:recipeId" element={<RecipePage />} />
+          <Route path="/Recipes/Details/*" element={<SpoonacularDetails />} />
           <Route path="/Spoonacular" element={<SpoonacularSearch />} />
         </Routes>
       </div>

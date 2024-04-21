@@ -4,7 +4,7 @@ import "./index.css";
 import { useEffect, useState } from "react";
 import axios from "axios";
 
-export default function RecipePage() {
+export default function SpoonacularDetails() {
     const { recipeId } = useParams();
     const [recipeDetails, setRecipeDetails] = useState<RecipeDetails | null>(null);
     interface RecipeDetails {
