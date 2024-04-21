@@ -25,16 +25,16 @@ export const signin = async (credentials: User) => {
   return response.data;
 };
 export const profile = async () => {
-  // try {
+  try {
     const response = await api.post(`${USERS_API}/profile`);
     return response.data;
-  // } catch (error: any) {
-  //   if (error.response && error.response.status === 401) {
-  //     throw new Error('Unauthorized');
-  //   } else {
-  //     throw error;
-  //   }
-  // }
+  } catch (error: any) {
+    if (error.response && error.response.status === 401) {
+      throw new Error('Unauthorized');
+    } else {
+      throw error;
+    }
+  }
 };
 
 export const updateUser = async (user: any) => {
