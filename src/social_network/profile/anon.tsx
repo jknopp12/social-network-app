@@ -19,8 +19,9 @@ export default function Anon() {
 
     const fetchUsers = async () => {
         const allUsers = await client.findAllUsers();
-        const limitedUsers = allUsers.slice(0, 5); // Displaying only first 5 users
-        setUsers(limitedUsers);
+        // const limitedUsers = allUsers.slice(0, 5);
+        // setUsers(limitedUsers);
+        setUsers(allUsers);
     };
 
     const handleUserClick = (userId: string) => {

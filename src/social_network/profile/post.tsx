@@ -54,30 +54,33 @@ export default function NewPost() {
                 {recipe && (
                     <div>
                         <div className="mb-3">
-                            <label htmlFor="name" className="form-label">Name</label>
-                            <input className="input form-control" value={recipe.name} onChange={(e) =>
+                            <label htmlFor="name" className="form-label">Recipe Name</label>
+                            <input className="input form-control" placeholder="Name" value={recipe.name} onChange={(e) =>
                                 setRecipe({ ...recipe, name: e.target.value })} />
                         </div>
                         <div className="mb-3">
-                            <label htmlFor="description" className="form-label">Description</label>
+                            <label htmlFor="description" className="form-label"> Recipe Description</label>
                             <textarea
                                 className="input form-control"
+                                placeholder="Description"
                                 value={recipe.description}
                                 onChange={(e) => setRecipe({ ...recipe, description: e.target.value })}
                             ></textarea>
                         </div>
                         <div className="mb-3">
-                            <label htmlFor="ingredients" className="form-label">Ingredients</label>
+                            <label htmlFor="ingredients" className="form-label">Recipe Ingredients</label>
                             <textarea
                                 className="input form-control"
+                                placeholder="Ingredients"
                                 value={recipe.ingredients}
                                 onChange={(e) => setRecipe({ ...recipe, ingredients: e.target.value })}
                             ></textarea>
                         </div>
                         <div className="mb-3">
-                            <label htmlFor="instructions" className="form-label">Instructions</label>
+                            <label htmlFor="instructions" className="form-label">Recipe Instructions</label>
                             <textarea
                                 className="input form-control"
+                                placeholder="Instructions"
                                 value={recipe.instructions}
                                 onChange={(e) => setRecipe({ ...recipe, instructions: e.target.value })}
                             ></textarea>

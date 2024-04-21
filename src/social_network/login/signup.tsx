@@ -20,11 +20,11 @@ export default function Signup() {
     return (
         <div>
             {error && <div>{error}</div>}
-            <input className="input" value={user.username} onChange={(e) => setUser({
+            <input placeholder="Username" className="input" value={user.username} onChange={(e) => setUser({
                 ...user, username: e.target.value
             })} />
             <br />
-            <input type="password" className="input" value={user.password} onChange={(e) => setUser({
+            <input placeholder="Password" type="password" className="input" value={user.password} onChange={(e) => setUser({
                 ...user, password: e.target.value
             })} />
             <br />

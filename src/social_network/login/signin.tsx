@@ -21,10 +21,10 @@ export default function Signin() {
   };
   return (
     <div>
-      <input className="input" value={credentials.username} onChange={(e) =>
+      <input placeholder="Username" className="input" value={credentials.username} onChange={(e) =>
         setCredentials({ ...credentials, username: e.target.value })} />
       <br />
-      <input className="input" type="password" value={credentials.password} onChange={(e) =>
+      <input placeholder="Password" className="input" type="password" value={credentials.password} onChange={(e) =>
         setCredentials({ ...credentials, password: e.target.value })} />
       <br />
       <button className="btn button btn-primary" onClick={signin}> Sign In </button>
