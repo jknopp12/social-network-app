@@ -74,3 +74,7 @@ export const createRecipe = async (recipe: any) => {
   const response = await api.post(`${RECIPES_API}`, recipe)
   return response.data;
 }
+export const getUserRole = async (userId: string) => {
+  const response = await api.get(`${USERS_API}/${userId}/role`);
+  return response.data;
+};

@@ -12,6 +12,7 @@ import Anon from './social_network/profile/anon';
 import HomeAnon from './social_network/home/anon';
 import RecipeHome from './social_network/recipe/home';
 import SearchPage from './social_network/search/search';
+import ManageUsers from './social_network/profile/manageusers';
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
           <Route path="/Profile/Post" element={<NewPost />} />
           <Route path="/Profile/SignedOut" element={<Anon />} />
           <Route path="/Profile/:profileId/*" element={<ProfileId />} />
+          <Route path="/Profile/ManageUsers" element={<ManageUsers />} />
           <Route path="/Search" element={<SearchPage />} />
           <Route path="/LogIn" element={<Login />} />
           <Route path="/Recipes" element={<RecipeHome />} />

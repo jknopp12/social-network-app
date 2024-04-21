@@ -19,7 +19,7 @@ function Profile() {
 
     const handleLogout = async () => {
         await client.signout();
-        navigate('/Login');
+        navigate('/LogIn');
     };
 
     const fetchProfile = async () => {
@@ -49,6 +49,11 @@ function Profile() {
                 <button className="btn btn-primary btn-logout" onClick={handleLogout}>
                     Sign Out
                 </button>
+                {profile.role === 'ADMIN' && (
+                    <Link to="/Profile/ManageUsers" className="btn btn-primary btn-logout">
+                        Manage Users
+                    </Link>
+                )}
                 <h1 className="mb-4">Profile</h1>
                 <hr />
                 <h2>Welcome, {profile.username}!</h2>
