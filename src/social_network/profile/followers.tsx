@@ -7,7 +7,7 @@ import { Link, useNavigate } from "react-router-dom";
 export default function Followers() {
     const [users, setUsers] = useState<User[]>([]);
     const [user, setUser] = useState<User>({
-        _id: "", username: "", password: "", firstName: "",
+        _id: "", username: "", password: "", firstName: "", email: "",
         lastName: "", role: ""
     });
     useEffect(() => {

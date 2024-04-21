@@ -32,3 +32,7 @@
     overflow-y: auto;
     margin-left: 120px;
 }
+
+.btn-margin {
+    margin-right: 5px
+}

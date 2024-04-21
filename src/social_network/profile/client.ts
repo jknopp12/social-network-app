@@ -8,7 +8,7 @@ export const BASE_API = process.env.REACT_APP_BASE_API_URL;
 export const USERS_API = `${BASE_API}/api/users`;
 export const RECIPES_API = `${BASE_API}/api/recipes`;
 export interface User {
-  _id: string; username: string; password: string; role: string;
+  _id: string; username: string; password: string; role: string; email: string;
   firstName: string, lastName: string
 };
 export interface Recipe {

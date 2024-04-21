@@ -8,7 +8,7 @@ export default function Following() {
     const [users, setUsers] = useState<User[]>([]);
     const [user, setUser] = useState<User>({
         _id: "", username: "", password: "", firstName: "",
-        lastName: "", role: ""
+        lastName: "", role: "", email: ""
     });
     const createUser = async () => {
         try {

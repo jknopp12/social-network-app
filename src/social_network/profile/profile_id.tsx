@@ -13,12 +13,13 @@ const api = axios.create({
 export default function ProfileId() {
     const { profileId } = useParams<{ profileId: string }>();
     const [user, setUser] = useState<client.User>({
-        _id: '',
-        username: '',
-        password: '',
-        firstName: '',
-        lastName: '',
-        role: ''
+        _id: "",
+        username: "",
+        password: "",
+        firstName: "",
+        lastName: "",
+        role: "",
+        email: ""
     });
     const [recipes, setRecipes] = useState<client.Recipe[]>([]);
 

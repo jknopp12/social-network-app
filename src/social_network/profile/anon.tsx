@@ -9,7 +9,7 @@ export default function Anon() {
     const [users, setUsers] = useState<User[]>([]);
     const [user, setUser] = useState<User>({
         _id: "", username: "", password: "", firstName: "",
-        lastName: "", role: ""
+        lastName: "", role: "", email: ""
     });
     const navigate = useNavigate();
 
