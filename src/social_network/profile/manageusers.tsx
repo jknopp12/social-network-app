@@ -118,7 +118,7 @@ export default function ManageUsers() {
                 </td>
                 <td>
                   <input
-                    type="password"
+                    type="text"
                     value={user.password}
                     onChange={(e) => handleInputChange(e, "password", user._id)}
                   />
