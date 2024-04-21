@@ -31,6 +31,9 @@ export default function RecipeHome() {
         <div className="d-flex">
             <Navigation />
             <div className="content-container">
+                <Link to="/Search" className="btn btn-primary btn-logout">
+                    Looking for Something Specfic?
+                </Link>
                 <h1 className="mb-4">Recipes</h1>
                 <hr />
                 <h3>Recent Recipe Posts</h3>
