@@ -16,7 +16,7 @@ export default function SpoonacularSearch() {
         imageType: string;
     }
 
-    const apiKey = 'cf8354d5713e462aa873fd607f939bff';
+    const apiKey = '5b932759591e406d84e164ce05aa8c8d';
 
     const handleSearch = async () => {
         try {

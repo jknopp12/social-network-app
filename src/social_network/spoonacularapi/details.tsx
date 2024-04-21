@@ -8,6 +8,7 @@ export default function SpoonacularDetails() {
     const pathname = window.location.href;
     const recipeId = pathname.split("/").pop();
     const [recipeDetails, setRecipeDetails] = useState<RecipeDetails | null>(null);
+
     interface RecipeDetails {
         title: string;
         image: string;
@@ -17,7 +18,7 @@ export default function SpoonacularDetails() {
         instructions: string;
     }
 
-    const apiKey = 'cf8354d5713e462aa873fd607f939bff';
+    const apiKey = '5b932759591e406d84e164ce05aa8c8d';
 
     useEffect(() => {
         const fetchRecipeDetails = async () => {
@@ -41,17 +42,22 @@ export default function SpoonacularDetails() {
                         <Link to="/Spoonacular" className="btn btn-primary btn-logout">
                             Click here to search Spoonacular for more recipes!
                         </Link>
-                        <h1 className="mb-4">{recipeDetails.title}</h1>
+                        <h1 className="mb-4">Recipe Info</h1>
                         <hr />
+                        <h2>{recipeDetails.title}</h2>
+                        <p> <a href={recipeDetails.sourceUrl}>View the Full Recipe Here!</a></p>
+                        <h3 className="mt-4">Instructions</h3>
+                        <div dangerouslySetInnerHTML={{ __html: recipeDetails.instructions }}></div>
+                        <br/>
                         <img src={recipeDetails.image} alt={recipeDetails.title} />
-                        <h4>View the full recipe <a href={recipeDetails.sourceUrl}>here</a> </h4>
-                        <h3 className="mt-4">Ingredients</h3>
-                        {recipeDetails.instructions}
                     </div>
                 </div>
             ) : (
-                <p>Loading...</p>
+                <div className="d-flex">
+                    <Navigation />
+                    <p>Loading...</p>
+                </div>
             )}
         </div>
     );
-};
+}

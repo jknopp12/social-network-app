@@ -52,7 +52,7 @@ export default function SearchPage() {
                         <p>No recipes found. Try another search.</p>
                     ) : (
                         <div className="row mt-4">
-                            {filteredRecipes.slice(0,9).map((recipe) => (
+                            {filteredRecipes.slice(0,8).map((recipe) => (
                                 <div key={recipe._id} className="col-lg-3 col-md-4 col-6 mb-4">
                                     <div className="card search-card">
                                         <Link to={`/Recipes/${recipe._id}`} style={{ textDecoration: 'none' }}>
@@ -69,8 +69,8 @@ export default function SearchPage() {
                     )
                 ) : (
                     <div className="row mt-4">
-                        {allRecipes.slice(0,9).map((recipe) => (
-                            <div key={recipe._id} className="col-lg-4 col-6 mb-4">
+                        {allRecipes.slice(0,8).map((recipe) => (
+                            <div key={recipe._id} className="col-lg-3 col-md-4 col-6 mb-4">
                                 <div className="card search-card">
                                     <Link to={`/Recipes/${recipe._id}`} style={{ textDecoration: 'none' }}>
                                         <div className="card-body">
