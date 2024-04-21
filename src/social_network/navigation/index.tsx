@@ -10,7 +10,7 @@ function Navigation() {
         { label: "LogIn", icon: <CiLogin className="fs-2" />},
         { label: "Profile",  icon: <CiUser className="fs-2" /> },
         { label: "Search",  icon: <CiSearch className="fs-2" /> },
-        { label: "Recipe",  icon: <CiBoxList className="fs-2" /> },
+        { label: "Recipes",  icon: <CiBoxList className="fs-2" /> },
     ];
     const { pathname } = useLocation();
     return (

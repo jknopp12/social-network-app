@@ -1,5 +1,5 @@
 import Navigation from "../navigation";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import "./index.css";
 import * as client from "./client";
 import { Recipe } from "./client";
@@ -35,6 +35,9 @@ export default function RecipePage() {
     <div className="d-flex">
       <Navigation />
       <div style={{ flexGrow: 1, padding: "20px" }}>
+        <Link to="/Recipes" className="btn btn-primary btn-logout">
+          Click here to view more recipes!
+        </Link>
         <h1 className="mb-4">{recipe.name}</h1>
         <hr />
         <h3>{recipe.description}</h3>

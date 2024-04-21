@@ -30,8 +30,8 @@ function App() {
           <Route path="/Profile/:profileId/*" element={<ProfileId />} />
           <Route path="/Search" element={<Search />} />
           <Route path="/Login" element={<Login />} />
-          <Route path="/Recipe" element={<RecipeHome />} />
-          <Route path="/Recipe/:recipeId/*" element={<RecipePage />} />
+          <Route path="/Recipes" element={<RecipeHome />} />
+          <Route path="/Recipes/:recipeId/*" element={<RecipePage />} />
         </Routes>
       </div>
     </HashRouter>
