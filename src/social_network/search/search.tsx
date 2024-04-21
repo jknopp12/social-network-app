@@ -37,6 +37,7 @@ export default function SearchPage() {
             <Navigation />
             <div className="content-container">
                 <h1 className="mb-4">Search Recipes</h1>
+                <hr />
                 <div className="mb-3">
                     <input
                         type="text"

@@ -1,5 +1,6 @@
 import { Link, useLocation } from "react-router-dom";
 import { CiUser, CiSearch, CiLogin, CiHome, CiBowlNoodles, CiBoxList } from "react-icons/ci";
+import { LiaUtensilSpoonSolid } from "react-icons/lia";
 
 
 import "./index.css"
@@ -11,6 +12,7 @@ function Navigation() {
         { label: "Profile",  icon: <CiUser className="fs-2" /> },
         { label: "Search",  icon: <CiSearch className="fs-2" /> },
         { label: "Recipes",  icon: <CiBoxList className="fs-2" /> },
+        { label: "Spoonacular", icon: <LiaUtensilSpoonSolid className="fs-2"/>}
     ];
     const { pathname } = useLocation();
     return (

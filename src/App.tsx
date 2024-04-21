@@ -13,6 +13,7 @@ import HomeAnon from './social_network/home/anon';
 import RecipeHome from './social_network/recipe/home';
 import SearchPage from './social_network/search/search';
 import ManageUsers from './social_network/profile/manageusers';
+import SpoonacularSearch from './social_network/spoonacularapi';
 
 function App() {
   return (
@@ -34,6 +35,7 @@ function App() {
           <Route path="/LogIn" element={<Login />} />
           <Route path="/Recipes" element={<RecipeHome />} />
           <Route path="/Recipes/:recipeId/*" element={<RecipePage />} />
+          <Route path="/Spoonacular" element={<SpoonacularSearch />} />
         </Routes>
       </div>
     </HashRouter>

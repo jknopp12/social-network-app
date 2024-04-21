@@ -1,0 +1,25 @@
+.btn-primary {
+    margin: 10px;
+}
+
+.content-container {
+    /* Add styles to ensure the container takes full height */
+    height: 100%;
+    overflow-y: auto;
+    /* Add scrollbar when needed */
+}
+
+.card {
+    /* Add styles to control the height of each card */
+    height: 100%;
+}
+
+.card-body {
+    /* Add styles to ensure content is fully visible */
+    overflow: hidden;
+}
+
+.spoonacularCard {
+    padding: 10px;
+    border-radius: 10px;
+}
