@@ -1,7 +1,6 @@
 import { Navigate, Route, Routes, HashRouter } from 'react-router-dom';
 import Home from './social_network/home';
 import Profile from './social_network/profile';
-import Search from './social_network/search';
 import Login from './social_network/login';
 import Information from './social_network/profile/information';
 import Followers from './social_network/profile/followers';
@@ -12,6 +11,7 @@ import NewPost from './social_network/profile/post';
 import Anon from './social_network/profile/anon';
 import HomeAnon from './social_network/home/anon';
 import RecipeHome from './social_network/recipe/home';
+import SearchPage from './social_network/search/search';
 
 function App() {
   return (
@@ -28,7 +28,7 @@ function App() {
           <Route path="/Profile/Post" element={<NewPost />} />
           <Route path="/Profile/SignedOut" element={<Anon />} />
           <Route path="/Profile/:profileId/*" element={<ProfileId />} />
-          <Route path="/Search" element={<Search />} />
+          <Route path="/Search" element={<SearchPage />} />
           <Route path="/Login" element={<Login />} />
           <Route path="/Recipes" element={<RecipeHome />} />
           <Route path="/Recipes/:recipeId/*" element={<RecipePage />} />
