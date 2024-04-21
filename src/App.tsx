@@ -35,6 +35,7 @@ function App() {
           <Route path="/LogIn" element={<Login />} />
           <Route path="/Recipes" element={<RecipeHome />} />
           <Route path="/Recipes/:recipeId/*" element={<RecipePage />} />
+          <Route path="/Recipes/Details/:recipeId" element={<RecipePage />} />
           <Route path="/Spoonacular" element={<SpoonacularSearch />} />
         </Routes>
       </div>

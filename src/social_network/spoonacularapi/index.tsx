@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import Navigation from '../navigation';
 import './index.css';
+import { Link } from 'react-router-dom';
 
 export default function SpoonacularSearch() {
     const [query, setQuery] = useState('');
@@ -53,12 +54,14 @@ export default function SpoonacularSearch() {
                 <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
                     {searchResults.map((recipe) => (
                         <div key={recipe.id} className="col">
+                            <Link to={`/Recipes/Details/${recipe.id}`} style={{ textDecoration: 'none'}}>
                             <div className="card">
                                 <img src={`https://img.spoonacular.com/recipes/${recipe.image}`} className="card-img-top spoonacularCard" style={{ objectFit: 'cover', height: '200px' }} alt={recipe.title} />
                                 <div className="card-body">
                                     <h5 className="card-title">{recipe.title}</h5>
                                 </div>
                             </div>
+                            </Link>
                         </div>
                     ))}
                 </div>
