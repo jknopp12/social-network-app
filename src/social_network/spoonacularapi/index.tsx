@@ -25,6 +25,8 @@ export default function SpoonacularSearch() {
 
             const response = await axios.get(`https://api.spoonacular.com/recipes/search?apiKey=${apiKey}&query=${query}`);
             setSearchResults(response.data.results);
+            
+            window.history.pushState({}, '', `/Spoonacular/${encodeURIComponent(query)}`);
         } catch (err: any) {
             setError(err.message);
         } finally {
@@ -54,13 +56,13 @@ export default function SpoonacularSearch() {
                 <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
                     {searchResults.map((recipe) => (
                         <div key={recipe.id} className="col">
-                            <Link to={`/Recipes/Details/${recipe.id}`} style={{ textDecoration: 'none'}}>
-                            <div className="card">
-                                <img src={`https://img.spoonacular.com/recipes/${recipe.image}`} className="card-img-top spoonacularCard" style={{ objectFit: 'cover', height: '200px' }} alt={recipe.title} />
-                                <div className="card-body">
-                                    <h5 className="card-title">{recipe.title}</h5>
+                            <Link to={`/Recipes/Details/${recipe.id}`} style={{ textDecoration: 'none' }}>
+                                <div className="card">
+                                    <img src={`https://img.spoonacular.com/recipes/${recipe.image}`} className="card-img-top spoonacularCard" style={{ objectFit: 'cover', height: '200px' }} alt={recipe.title} />
+                                    <div className="card-body">
+                                        <h5 className="card-title">{recipe.title}</h5>
+                                    </div>
                                 </div>
-                            </div>
                             </Link>
                         </div>
                     ))}

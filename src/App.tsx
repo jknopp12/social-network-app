@@ -1,4 +1,4 @@
-import { Navigate, Route, Routes, HashRouter } from 'react-router-dom';
+import { HashRouter, Routes, Route, Navigate } from 'react-router-dom';
 import Home from './social_network/home';
 import Profile from './social_network/profile';
 import Login from './social_network/login';
