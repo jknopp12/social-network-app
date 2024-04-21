@@ -34,7 +34,7 @@ export default function RecipePage() {
   return (
     <div className="d-flex">
       <Navigation />
-      <div style={{ flexGrow: 1, padding: "20px" }}>
+      <div className="content-container">
         <Link to="/Recipes" className="btn btn-primary btn-logout">
           Click here to view more recipes!
         </Link>

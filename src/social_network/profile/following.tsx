@@ -56,7 +56,7 @@ export default function Following() {
     return (
         <div className="d-flex">
             <Navigation />
-            <div style={{ flexGrow: 1, padding: "20px" }}>
+            <div className="content-container">
                 <button className="btn btn-primary btn-logout" onClick={signout}>
                     Sign Out
                 </button>

@@ -40,7 +40,7 @@ export default function ProfileId() {
     return (
         <div className="d-flex">
             <Navigation />
-            <div style={{ flexGrow: 1, padding: '20px' }}>
+            <div className="content-container">
                 <h1>Profile </h1>
                 <hr />
                 <h2 className="mt-4"> {user?.username} </h2>

@@ -30,7 +30,7 @@ export default function Anon() {
     return (
         <div className="d-flex">
             <Navigation />
-            <div style={{ flexGrow: 1, padding: '20px' }}>
+            <div className="content-container">
                 <Link to="/Login" className="btn btn-primary btn-logout">
                     Sign Up
                 </Link>
