@@ -36,7 +36,7 @@ function App() {
           <Route path="/LogIn" element={<Login />} />
           <Route path="/Recipes" element={<RecipeHome />} />
           <Route path="/Recipes/:recipeId/*" element={<RecipePage />} />
-          <Route path="/Recipes/Details/*" element={<SpoonacularDetails />} />
+          <Route path="/Recipes/Details/:recipeId" element={<SpoonacularDetails />} />
           <Route path="/Spoonacular" element={<SpoonacularSearch />} />
         </Routes>
       </div>
