@@ -29,7 +29,7 @@ function App() {
           <Route path="/Profile/SignedOut" element={<Anon />} />
           <Route path="/Profile/:profileId/*" element={<ProfileId />} />
           <Route path="/Search" element={<SearchPage />} />
-          <Route path="/Login" element={<Login />} />
+          <Route path="/LogIn" element={<Login />} />
           <Route path="/Recipes" element={<RecipeHome />} />
           <Route path="/Recipes/:recipeId/*" element={<RecipePage />} />
         </Routes>

@@ -33,7 +33,7 @@ export default function HomeAnon() {
         <div className="d-flex">
             <Navigation />
             <div className="content-container">
-                <Link to="/Login" className="btn btn-primary btn-logout">
+                <Link to="/LogIn" className="btn btn-primary btn-logout">
                     Sign Up / Log In
                 </Link>
                 <h1 className="mb-4">Home</h1>

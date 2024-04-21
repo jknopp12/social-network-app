@@ -42,7 +42,7 @@ export default function Following() {
 
     const signout = async () => {
         await client.signout();
-        navigate("/Login");
+        navigate("/LogIn");
     };
     const navigate = useNavigate();
     const back = async () => {

@@ -38,7 +38,7 @@ function Home() {
     };
     const handleLogout = async () => {
         await client.signout();
-        navigate('/Login');
+        navigate('/LogIn');
     };
 
     useEffect(() => {

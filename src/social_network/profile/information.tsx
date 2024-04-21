@@ -19,7 +19,7 @@ export default function Information() {
   };
   const signout = async () => {
     await client.signout();
-    navigate("/Login");
+    navigate("/LogIn");
   };
   const back = async () => {
     navigate("/Profile");
