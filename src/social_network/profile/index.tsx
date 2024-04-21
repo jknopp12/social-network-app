@@ -61,17 +61,17 @@ function Profile() {
 
                 <div className="row mb-4">
                     <div className="col-md-4">
-                        <Link to="/Profile/Information" className="btn btn-primary btn-block">
+                        <Link to="/Profile/Information" className="btn btn-primary btn-margin-profile btn-block">
                             View Personal Information
                         </Link>
                     </div>
                     <div className="col-md-4">
-                        <Link to="/Profile/Followers" className="btn btn-primary btn-block">
+                        <Link to="/Profile/Followers" className="btn btn-primary btn-margin-profile btn-block">
                             Followers
                         </Link>
                     </div>
                     <div className="col-md-4">
-                        <Link to="/Profile/Following" className="btn btn-primary btn-block">
+                        <Link to="/Profile/Following" className="btn btn-primary btn-margin-profile btn-block">
                             Following
                         </Link>
                     </div>
@@ -85,7 +85,7 @@ function Profile() {
                     Click on a recipe card to view more details:</p>
                 <div className="row">
                     {recipes.map((recipe) => (
-                        <div key={recipe._id} className="col-md-4 mb-4">
+                        <div key={recipe._id} className="col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-4 mb-4">
                             <div className="card">
                                 <Link to={`/Recipes/${recipe._id}`} style={{ textDecoration: 'none' }}>
                                     <div className="card-body">

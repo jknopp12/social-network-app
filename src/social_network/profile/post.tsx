@@ -55,13 +55,13 @@ export default function NewPost() {
                     <div>
                         <div className="mb-3">
                             <label htmlFor="name" className="form-label">Recipe Name</label>
-                            <input className="input form-control" placeholder="Name" value={recipe.name} onChange={(e) =>
+                            <input className="input form-control wide-input" placeholder="Name" value={recipe.name} onChange={(e) =>
                                 setRecipe({ ...recipe, name: e.target.value })} />
                         </div>
                         <div className="mb-3">
                             <label htmlFor="description" className="form-label"> Recipe Description</label>
                             <textarea
-                                className="input form-control"
+                                className="input form-control wide-input"
                                 placeholder="Description"
                                 value={recipe.description}
                                 onChange={(e) => setRecipe({ ...recipe, description: e.target.value })}
@@ -70,16 +70,16 @@ export default function NewPost() {
                         <div className="mb-3">
                             <label htmlFor="ingredients" className="form-label">Recipe Ingredients</label>
                             <textarea
-                                className="input form-control"
+                                className="input form-control wide-input"
                                 placeholder="Ingredients"
                                 value={recipe.ingredients}
                                 onChange={(e) => setRecipe({ ...recipe, ingredients: e.target.value.split(',') })}
                             ></textarea>
                         </div>
                         <div className="mb-3">
-                            <label htmlFor="instructions" className="form-label">Recipe Instructions</label>
+                            <label htmlFor="instructions" className="form-label ">Recipe Instructions</label>
                             <textarea
-                                className="input form-control"
+                                className="input form-control wide-input"
                                 placeholder="Instructions"
                                 value={recipe.instructions}
                                 onChange={(e) => setRecipe({ ...recipe, instructions: e.target.value.split('.') })}

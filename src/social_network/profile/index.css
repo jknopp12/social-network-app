@@ -36,3 +36,12 @@
 .btn-margin {
     margin-right: 5px
 }
+
+.btn-margin-profile {
+    margin: 5px;
+}
+
+.wide-input {
+    width: 100%;
+    resize: vertical;
+}
