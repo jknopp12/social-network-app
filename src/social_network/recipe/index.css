@@ -6,3 +6,19 @@
 .flex-grow-1 {
     flex-grow: 1;
 }
+
+.recipe-card-title {
+    font-size: 1.5em;
+    color: navy;
+}
+
+.recipe-card-txt {
+    font-size: 1em;
+    color: navy;
+}
+
+.card-icon-t {
+    font-size: 3em;
+    color: navy;
+    margin-bottom: 5px;
+}

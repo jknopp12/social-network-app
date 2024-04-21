@@ -45,12 +45,13 @@
 .content-container {
     flex-grow: 1;
     padding: 20px;
+    overflow-y: auto;
 }
 
 .card-icon {
     margin-bottom: 5px;
     font-size: 5em;
-    color: lightblue;
+    color: navy;
     
 }
 
