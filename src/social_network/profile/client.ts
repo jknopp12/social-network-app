@@ -4,7 +4,6 @@ const api = axios.create({
 }
 );
 export const BASE_API = process.env.REACT_APP_BASE_API_URL;
-// export const USERS_API = process.env.REACT_APP_API_URL;
 export const USERS_API = `${BASE_API}/api/users`;
 export const RECIPES_API = `${BASE_API}/api/recipes`;
 export interface User {

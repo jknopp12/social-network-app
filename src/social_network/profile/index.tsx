@@ -7,12 +7,12 @@ import { CiBowlNoodles } from "react-icons/ci";
 
 function Profile() {
     const [profile, setProfile] = useState({
-        username: '',
-        password: '',
-        firstName: '',
-        lastName: '',
-        email: '',
-        role: 'USER'
+        username: "",
+        password: "",
+        firstName: "",
+        lastName: "",
+        email: "",
+        role: "USER"
     });
     const [recipes, setRecipes] = useState<client.Recipe[]>([]);
     const navigate = useNavigate();
